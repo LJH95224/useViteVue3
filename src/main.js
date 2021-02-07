@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-16 14:13:21
- * @LastEditTime: 2021-01-17 14:28:04
+ * @LastEditTime: 2021-02-06 21:18:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \viteDemo\src\main.js
@@ -11,11 +11,18 @@ import App from './App.vue'
 import CanvasApp from './CanvasApp.vue'
 import './index.css'
 
-createApp(App).component('comp', {
+const app = createApp(App)
+app.component('comp', {
   render () {
     return h('div', 'I am comp')
   }
-}).mount('#app')
+})
+app.directive('highlight', {
+  beforeMount(el, binding, vnode) {
+    el.style.background = binding.value
+  }
+})
+app.mount('#app')
 
 // 自定义渲染器
 const nodeOps = {
