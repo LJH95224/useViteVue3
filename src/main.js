@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-16 14:13:21
- * @LastEditTime: 2021-02-06 21:18:21
+ * @LastEditTime: 2021-02-08 21:24:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \viteDemo\src\main.js
@@ -10,6 +10,7 @@ import { createApp, createRenderer, h } from 'vue'
 import App from './App.vue'
 import CanvasApp from './CanvasApp.vue'
 import './index.css'
+import EditTodo from './components/todos/EditTodo.vue'
 
 const app = createApp(App)
 app.component('comp', {
@@ -22,6 +23,7 @@ app.directive('highlight', {
     el.style.background = binding.value
   }
 })
+app.component('EditTodo', EditTodo)
 app.mount('#app')
 
 // 自定义渲染器
