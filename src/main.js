@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-16 14:13:21
- * @LastEditTime: 2021-02-08 21:24:08
+ * @LastEditTime: 2021-02-09 10:39:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \viteDemo\src\main.js
@@ -11,8 +11,10 @@ import App from './App.vue'
 import CanvasApp from './CanvasApp.vue'
 import './index.css'
 import EditTodo from './components/todos/EditTodo.vue'
+import router from './router/index.js'
 
 const app = createApp(App)
+app.use(router)
 app.component('comp', {
   render () {
     return h('div', 'I am comp')

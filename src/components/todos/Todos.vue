@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-06 21:56:50
- * @LastEditTime: 2021-02-08 22:25:51
+ * @LastEditTime: 2021-02-09 11:41:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \viteDemo\src\components\todos\Todos.vue
@@ -27,9 +27,8 @@
     </ul>
     <!-- 过滤 -->
     <Filter :items='filterItems' v-model="visibility"></Filter>
-      <!-- <span @click="visibility = 'all'" :class="{ selected: visibility === 'all' }">All</span>
-      <span @click="visibility = 'active'" :class="{ selected: visibility === 'active' }">Active</span>
-      <span @click="visibility = 'completed'" :class="{ selected: visibility === 'completed' }">Completed</span> -->
+    <!-- 返回dashbord -->
+    <button @click="goBackDashbord">goBackToDashbord</button>
   </div>
 </template>
 
@@ -39,7 +38,7 @@ import TodoItem from './TodoItem.vue'
 import Filter from './Filter.vue'
 import { useTodos } from './useTodos.js'
 import { useFilter } from './useFilter'
-
+import { useRouter } from 'vue-router'
 export default {
   components: {
     TodoItem,
@@ -53,12 +52,18 @@ export default {
     })
     const { todos, addTodo, removeTodo } = useTodos(todoState)
     const filterState = useFilter(todos)
+    
+    const router = useRouter()
 
+    
     return {
       ...toRefs(todoState),
       ...toRefs(filterState),
       addTodo,
-      removeTodo
+      removeTodo,
+      goBackDashbord () {
+        router.push('/')
+      }
     }
   }
 }

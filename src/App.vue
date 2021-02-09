@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-16 14:13:21
- * @LastEditTime: 2021-02-08 21:12:51
+ * @LastEditTime: 2021-02-09 09:56:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \viteDemo\src\App.vue
@@ -9,7 +9,8 @@
 <template>
   <div style="width: 100%;height: 800px;">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <Todos></Todos>
+    <!-- <Todos></Todos> -->
+    <router-view></router-view>
   </div>
   <div>
     <HelloWorld msg="Hello Vue 3.0 + Vite" />
