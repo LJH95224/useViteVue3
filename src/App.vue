@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-16 14:13:21
- * @LastEditTime: 2021-02-09 09:56:18
+ * @LastEditTime: 2021-04-10 19:20:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \viteDemo\src\App.vue
@@ -10,7 +10,12 @@
   <div style="width: 100%;height: 800px;">
     <img alt="Vue logo" src="./assets/logo.png" />
     <!-- <Todos></Todos> -->
-    <router-view></router-view>
+    <router-view v-slot={Component}>
+      <keep-alive>
+        <component :is='Component'></component>
+      </keep-alive>
+    </router-view>
+    <!-- <router-view></router-view> -->
   </div>
   <div>
     <HelloWorld msg="Hello Vue 3.0 + Vite" />
