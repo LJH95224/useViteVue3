@@ -1168,6 +1168,27 @@ npm install vuex@4
 
 为了向 Vue3 初始化方式看齐，Vuex4 初始化方式作出了相应变化，使用新的 createStore 函数创建新的 store 实例。
 
+```js
+import { createStore } from 'vuex'
+import { createApp } from 'vue'
+
+const store = createStore({
+  state () {
+    return {
+      count: 0
+    }
+  },
+  mutations: {
+    add (state) {
+      state.count++
+    }
+  }
+})
+
+const app = createApp(App)
+app.use(store)
+```
+
 
 
 
