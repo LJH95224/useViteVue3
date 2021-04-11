@@ -1154,6 +1154,22 @@ params/query/hash
 
 
 
+## Vuex4
+
+Vuex4 是 Vue3 的兼容版本，关注与兼容性，提供和 Vuex3 相同的API，因此我们可以在Vue3 中复用之前已存在的 Vuex 代码
+
+### 安装 Vuex4
+
+```bash
+npm install vuex@4
+```
+
+### 初始化方式
+
+为了向 Vue3 初始化方式看齐，Vuex4 初始化方式作出了相应变化，使用新的 createStore 函数创建新的 store 实例。
+
+
+
 
 
 
